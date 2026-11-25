@@ -1,0 +1,54 @@
+# EditorConfig for Rust projects — https://editorconfig.org
+root = true
+
+# Defaults for every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# Rust source — matches rustfmt defaults (4 spaces, max_width = 100)
+[*.rs]
+indent_size = 4
+max_line_length = 80
+
+# Cargo.toml, rustfmt.toml, clippy.toml, etc.
+[*.toml]
+indent_size = 4
+
+# CI configs, docker-compose, GitHub Actions
+[*.{yml,yaml}]
+indent_size = 2
+
+# JSON (e.g. .vscode/, rust-project.json)
+[*.json]
+indent_size = 2
+
+# Markdown: trailing double-space is a line break, so keep it
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Makefiles / justfiles require (or conventionally use) tabs
+[{Makefile,makefile,*.mk}]
+indent_style = tab
+
+[{justfile,Justfile,*.just}]
+indent_size = 4
+
+# Shell scripts
+[*.sh]
+indent_size = 2
+
+# Lockfiles and generated files: don't touch
+[Cargo.lock]
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_size = unset
+
+# Windows batch files need CRLF
+[*.{bat,cmd,ps1}]
+end_of_line = crlf

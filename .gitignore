@@ -1,0 +1,5 @@
+# Rust build output
+/target/
+
+# Agent skills
+.agents/skills/*/evals/
